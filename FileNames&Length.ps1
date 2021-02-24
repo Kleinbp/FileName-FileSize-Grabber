@@ -12,5 +12,6 @@ $information = Get-ChildItem -Recurse -Path $FileLocation
 $Destination = 'C:\Users\Public\Documents\1st Output.csv'
 
 #Actual command to generate array of data
-$information | Format-Table -Property Name, Size| Select-Object -Property Name, Size | Export-Csv $Destination -Force
+$information | Select-Object -Property Name, Length | Export-Csv $Destination
+
 
